@@ -32,8 +32,18 @@
 
   NONE=$'\033[0m'    # none
 
+
+
 alias maven=$M2_HOME/bin/mvn
 color_maven() {
+
+  #checking whether $M2_HOME variable is set. This variable is required for this script
+  if [ -z "$M2_HOME" ]
+  then
+  echo -e $RED"[colorize script error] env. variable \$M2_HOME is not set"$NONE
+  return
+  fi
+
   maven $* | sed \
     -e "s/Tests run: \([^,]*\), Failures: \([^,]*\), Errors: \([^,]*\), Skipped: \([^,]*\)/${GRN}Tests run: \1$NONE, Failures: $RED\2$NONE, Errors: $RED\3$NONE, Skipped: $YEL\4$NONE/g" \
     -e "s/\(SKIPPED\)/$RED\1$NONE/g" \
