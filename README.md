@@ -1,20 +1,23 @@
-#Colorize maven linux
-
-Script to colorize maven output in linux
+Colorize maven linux
 ==============
 
-To colorize maven in linux you should do next steps:
+Script to colorize maven output in linux.
 
-1) copy colorize-maven.sh to home folder( ~/ )
-
-2) insert into ~/.bashrc next code:
+To colorize maven in linux
+----------------------------------------------------
+ you should do next steps:
+* copy colorize-maven.sh to home folder( ```~/``` )
+* insert into ```~/.bashrc``` next code:
+```bash
 if [ -f ~/.colorize-maven.sh ]; then
   . ~/.colorize-maven.sh
 fi
-
-3) execute next command to reload .bashrc script:
-source ~/.bashrc
-
-4) done. now you can use:
-"mvn" command for colorized maven
-"maven" for simple(non-colorized) maven
+```
+* execute next command to reload ```.bashrc``` script:
+```console
+>source ~/.bashrc
+```
+* **Done**.
+Now you can use:<br>
+```mvn``` command for colorized maven<br>
+```maven``` for simple (non-colorized) maven
