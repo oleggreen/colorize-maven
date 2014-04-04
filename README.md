@@ -2,6 +2,10 @@ Colorize maven linux
 ==============
 
 Script to colorize maven output in linux.
+Next sources was used: 
+* <a href="http://gist.github.com/mike-ensor/1881211">mike-ensor/colorize-maven.sh</a>
+* <a href="http://github.com/builddoctor/maven-antsy-color">builddoctor/maven-antsy-color</a>
+* <a href="http://blog.blindgaenger.net/colorize_maven_output.html">blindgaenger blog</a>
 
 To colorize maven in linux
 ----------------------------------------------------
