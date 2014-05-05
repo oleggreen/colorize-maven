@@ -45,7 +45,10 @@ color_maven() {
   fi
 
   maven $* | sed \
-    -e "s/Tests run: \([0-9]*\), Failures: \([0-9]*\), Errors: \([0-9]*\), Skipped: \([0-9]*\)/${GRN}Tests run: \1$NONE, Failures: $RED\2$NONE, Errors: $RED\3$NONE, Skipped: $YEL\4$NONE/g" \
+    -e "s/Tests run: \([1-9][0-9]*\)/${GRN} Tests run: \1$NONE/g" \
+    -e "s/, Failures: \([1-9][0-9]*\)/,$RED Failures: \1$NONE/g" \
+    -e "s/, Errors: \([1-9][0-9]*\)/,$RED Errors: \1$NONE/g" \
+    -e "s/, Skipped: \([1-9][0-9]*\)/,$YEL Skipped: \1$NONE/g" \
     -e "s/\(Downloading: .*\)/$MAG\1$NONE/g" \
     -e "s/\(Downloaded: .*\)/$MAG\1$NONE/g" \
     -e "s/\(SKIPPED\)/$RED\1$NONE/g" \
