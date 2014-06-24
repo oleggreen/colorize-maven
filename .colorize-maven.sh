@@ -1,5 +1,8 @@
 # Colorize Maven Output
 
+alias maven=$M2_HOME/bin/mvn
+color_maven() {
+
   # regular colors
   BLK=$'\033[0;30m'    # black
   RED=$'\033[0;31m'    # red
@@ -31,11 +34,7 @@
   BGWHT=$'\033[47m'  # white
 
   NONE=$'\033[0m'    # none
-
-
-
-alias maven=$M2_HOME/bin/mvn
-color_maven() {
+  
 
   #checking whether $M2_HOME variable is set. This variable is required for this script
   if [ -z "$M2_HOME" ]
